@@ -11,7 +11,8 @@ resource "aws_instance" "myfirstinstace" {
     key_name = aws_key_pair.levelup_key.key_name
     vpc_security_group_ids = [aws_security_group.allow-levelup-ssh.id]
     subnet_id = aws_subnet.levelupvpc-public-1.id
-    availability_zone = "ap-south-1a"
+    associate_public_ip_address = true
+    
     
     tags = {
       Name = "terraform-demo"
