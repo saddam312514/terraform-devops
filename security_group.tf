@@ -1,6 +1,7 @@
 resource "aws_security_group" "allow-levelup-ssh" {
     name = "allow-levelup-ssh"
     description = "security group that allow ssh connect"
+    vpc_id = aws_vpc.levelup_vpc.id
 
     egress {
         from_port = 0
